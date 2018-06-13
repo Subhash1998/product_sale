@@ -1,0 +1,200 @@
+<!doctype html>
+
+<html>
+{% load staticfiles %}
+	<head>
+		<title>BUY HERE | Home</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0">
+		<link rel="stylesheet" href="{% static 'css/css/style.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+	</head>
+
+	<body>
+    <nav class="navbar navbar-expand-lg navbar-dark danger-color navbar fixed-top">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">BUY HERE</a>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pay/login/">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pay/register/">Register</a>
+            </li>
+
+            
+           <!--  <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li> -->
+
+        </ul>
+        <!-- Links -->
+
+        <form class="form-inline">
+            <div class="md-form my-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </div>
+        </form>
+    </div>
+    <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
+        <div id="box1">
+           
+        </div><br><br>
+        <div class="container">
+          <div class="row">
+<!-- Card Wider -->
+<div class="col-md-4">
+<div class="card card-cascade wider">
+
+  <!-- Card image -->
+  <div class="view overlay">
+    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
+    <a href="#!">
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body text-center">
+
+    <!-- Title -->
+    <h4 class="card-title"><strong>Alison Belmont</strong></h4>
+    <!-- Subtitle -->
+    <h5 class="blue-text pb-2"><strong>Graffiti Artist</strong></h5>
+    <!-- Text -->
+    <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
+
+    <!-- Linkedin -->
+    <a class="px-2 fa-lg li-ic"><i class="fa fa-linkedin"></i></a>
+    <!-- Twitter -->
+    <a class="px-2 fa-lg tw-ic"><i class="fa fa-twitter"></i></a>
+    <!-- Dribbble -->
+    <a class="px-2 fa-lg fb-ic"><i class="fa fa-facebook"></i></a>
+
+  </div>
+
+</div>
+</div>
+<!-- Card Wider -->
+
+<!-- Card Narrower -->
+<div class="col-md-4">
+<div class="card card-cascade narrower">
+
+  <!-- Card image -->
+  <div class="view overlay">
+    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" alt="Card image cap">
+    <a>
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Label -->
+    <h5 class="pink-text pb-2 pt-1"><i class="fa fa-cutlery"></i> Culinary</h5>
+    <!-- Title -->
+    <h4 class="card-title">Cheat day inspirations</h4>
+    <!-- Text -->
+    <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+    <!-- Button -->
+    <a class="btn btn-unique">Button</a>
+
+  </div>
+
+</div>
+</div>
+<!-- Card Narrower -->
+
+<!-- Card Regular -->
+<div class="col-md-4">
+<div class="card card-cascade">
+
+  <!-- Card image -->
+  <div class="view overlay">
+    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap">
+    <a>
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body text-center">
+
+    <!-- Title -->
+    <h4 class="card-title"><strong>Billy Coleman</strong></h4>
+    <!-- Subtitle -->
+    <h6 class="font-weight-bold indigo-text py-2">Web developer</h6>
+    <!-- Text -->
+    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
+    </p>
+
+    <!-- Facebook -->
+    <a type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"></i></a>
+    <!-- Twitter -->
+    <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"></i></a>
+    <!-- Google + -->
+    <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-dribbble"></i></a>
+
+  </div>
+
+</div>
+</div>
+<!-- Card Regular -->
+            
+</div>
+      </div><br><br>
+        <div id="box2">
+            <h1>One of the most beautiful qualities of true friendship is to understand and to be understood.</h1>
+        </div>
+        <div class="container">
+
+          <div class="row">
+
+              <div class="col-md-12 text-center my-3">
+
+                  <h1 class="font-weight-bold pink-text mb-3">Lorem ipsum dolor sit amet, consectetur quis elit.</h1>
+                  <p align="justify">Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis cupiditate reprehenderit.</p>
+
+              </div>
+
+          </div>
+
+      </div>
+        <div id="box3">
+            <h1>My best friend is the one who brings out the best in me.</h1>
+        </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+	</body>
+</html>

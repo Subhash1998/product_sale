@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{user}} Shopping{% endblock %}</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+<style type="text/css">
+ 
+  body{
+    background-image: url('http://backgroundcheckall.com/wp-content/uploads/2017/12/professional-website-background-images-hd-2.jpg');
+    font-family: 'Open Sans', sans-serif;
+  }
+    .form-inline {
+        display: inline-block;
+    }
+  .navbar-header.col {
+    padding: 0 !important;
+  } 
+  .navbar {
+    font-size: 14px;
+    background: #fff;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-bottom: 1px solid #d6d6d6;
+    box-shadow: 0 0 4px rgba(0,0,0,.1);   
+  }
+  .navbar .navbar-brand {
+    color: #555;
+    padding-left: 0;
+    font-size: 20px;
+    padding-right: 50px;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+  }
+  .navbar .navbar-brand b {
+    font-weight: bold;
+    color: #f04f01;
+  }
+  .navbar ul.nav li {
+    font-size: 96%;
+    font-weight: bold;    
+    text-transform: uppercase;
+  }
+  .navbar ul.nav li.active a, .navbar ul.nav li.active a:hover, .navbar ul.nav li.active a:focus {
+    color: #f04f01 !important;
+    background: transparent !important;
+  }
+  .search-box {
+        position: relative;
+    }
+  .navbar-header.col {
+    padding: 0 !important;
+  } 
+  .navbar {
+    font-size: 14px;
+    background: #fff;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-bottom: 1px solid #d6d6d6;
+    box-shadow: 0 0 4px rgba(0,0,0,.1);   
+  }
+  .navbar .navbar-brand {
+    color: #555;
+    padding-left: 0;
+    font-size: 20px;
+    padding-right: 50px;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+  }
+  .navbar .navbar-brand b {
+    font-weight: bold;
+    color: #f04f01;
+  }
+  .navbar ul.nav li {
+    font-size: 96%;
+    font-weight: bold;    
+    text-transform: uppercase;
+  }
+  .navbar ul.nav li.active a, .navbar ul.nav li.active a:hover, .navbar ul.nav li.active a:focus {
+    color: #f04f01 !important;
+    background: transparent !important;
+  }
+  .search-box {
+        position: relative;
+    }
+  .search-box input.form-control, .search-box .btn {
+    font-size: 14px;
+    border-radius: 2px !important;
+  }
+  .search-box .input-group-btn {
+    padding-left: 4px;    
+  }
+  .search-box input.form-control:focus {
+    border-color: #f04f01;
+    box-shadow: 0 0 8px rgba(240,79,1,0.2);
+  }
+  .search-box .btn-primary, .search-box .btn-primary:active {
+    font-weight: bold;
+    background: #f04f01;
+    border-color: #f04f01;
+    text-transform: uppercase;
+    min-width: 90px;
+  }
+  .search-box .btn-primary:focus {
+    outline: none;
+    background: #eb4e01;
+    box-shadow: 0 0 8px rgba(240,79,1,0.2);
+  }
+  .search-box .btn span {
+    transform: scale(0.9);
+    display: inline-block;
+  }
+  .navbar .nav-item i {
+    font-size: 18px;
+  }
+  .navbar .dropdown-item i {
+    font-size: 16px;
+    min-width: 22px;
+  }
+  .navbar .nav-item.open > a {
+    background: none !important;
+  }
+  .navbar .dropdown-menu {
+    border-radius: 1px;
+    border-color: #e5e5e5;
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  }
+  .navbar .dropdown-menu li a {
+    color: #777;
+    padding: 8px 20px;
+    line-height: normal;
+    font-size: 14px;
+  }
+  .navbar .dropdown-menu li a:hover, .navbar .dropdown-menu li a:active {
+    color: #333;
+  }
+  .navbar .navbar-form {
+    border: none;
+  }
+
+      .box
+{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow:0 0 20px 0 rgb(17, 42, 66);
+    background-color: white;
+    padding: 1em;
+    padding-bottom: 2em;
+    border-radius: .5%;
+    height: 500px;
+}   
+h3.mystyle {
+  font: 100 30px/1.3 'Lobster Two', Helvetica, sans-serif;
+  color: #2b2b2b;
+  text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+}
+    h4.payment {
+  font: 100 30px/1.5 'Pacifico', Helvetica, sans-serif;
+  color: #2b2b2b;
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+}
+
+h3, h4.payment {
+    display: inline;
+}
+
+a.notif {
+  position: relative;
+  display: inline-block;  
+  height: 50px;
+  width: 50px;
+  background: url('http://i.imgur.com/evpC48G.png');
+  background-size: contain;
+  text-decoration: none;
+}
+.num {
+  position: absolute;
+  right: 11px;
+  top: 6px;
+  color: #fff;
+}
+
+a{
+  font-weight: bolder;
+  color: #f9f6f7;
+}
+.edit{
+  color: blue;
+}
+.list-group{
+  width: 70%; 
+  padding-left: 30%;
+}
+
+.profile{
+  border-radius: 50%;
+}
+
+  @media (min-width: 992px){
+    .form-inline .input-group .form-control {
+      width: 225px;     
+    }
+  }
+  @media (max-width: 992px){
+    .form-inline {
+      display: block;
+    }
+  }
+
+  form.am{
+    display: inline;
+  }
+
+</style>
+</head> 
+<body>
+{% if user.is_authenticated %}
+<nav class="navbar navbar-default navbar-expand-lg navbar-light">
+  <div class="navbar-header d-flex col">
+    <a class="navbar-brand" href="{% url 'pay:profile' %}">Hello!!<b>{{user.first_name}}</b></a>     
+    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
+      <span class="navbar-toggler-icon"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <!-- Collection of nav links, forms, and other content for toggling -->
+  <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+    <ul class="nav navbar-nav">
+      <li class="nav-item"><a href="{% url 'pay:profile' %}" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="{% url 'pay:profile_info' %}" class="nav-link">My Profile</a></li>      
+      <li class="nav-item active">
+        <a href="{% url 'pay:mycart' %}" class="nav-link">My Cart</a>
+       <!--  <a href="{% url 'pay:mycart' %}" class="notif"><span class="num">{{cart.count}}</span></a> -->
+      </li>
+      <li class="nav-item"><a href="{% url 'pay:myorder' %}" class="nav-link">My Orders</a></li>
+      <li class="nav-item"><a href="{% url 'pay:logout' %}" class="nav-link">Logout</a></li>
+    </ul>
+    <form method="post" action="{% url 'pay:search' %}" class="navbar-form form-inline navbar-right ml-auto">
+          <div class="input-group search-box">
+            <input type="text" class="form-control" placeholder="Search product" name="q">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary"><span>Search</span></button>
+            </span>
+          </div>
+    </form>   
+  </div>
+</nav>
+{% endif %}
+{% block body%}
+{%endblock%}
+</body>
+</html>    
+
+<script type="text/javascript">
+  $(function() {
+    var Accordion = function(el, multiple) {
+    this.el = el || {};
+    this.multiple = multiple || false;
+
+    // Variables privadas
+    var links = this.el.find('.link');
+    // Evento
+    links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+  }
+
+  Accordion.prototype.dropdown = function(e) {
+    var $el = e.data.el;
+      $this = $(this),
+      $next = $this.next();
+
+    $next.slideToggle();
+    $this.parent().toggleClass('open');
+
+    if (!e.data.multiple) {
+      $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+    };
+  } 
+
+  var accordion = new Accordion($('#accordion'), false);
+});
+</script>
+</body>
+</html>    

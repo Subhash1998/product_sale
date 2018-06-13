@@ -1,0 +1,70 @@
+{% extends 'pay/profile.html' %}
+
+{%block body%}
+
+<h1>PRODUCTS</h1>
+{% if contacts %}
+{% for item in contacts%}
+    {% if forloop.first %}<div class="row">{% endif %}
+    <div class="col-sm-4">
+<div class="card">
+
+  <!-- Card image -->
+  <img src="{{item.p_image.url}}" class="card-img-top" alt="Card image cap" height="400">
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h4 class="card-title"><a>{{item.p_name}}</a></h4>
+    <!-- Text -->
+    <p class="card-text">{{item.p_description}}<br><h3>Rs. {{item.p_price}}</h3></p>
+    <!-- Button -->
+    <div class="row">
+                        <div class="col-sm-6">
+                              <form action="{% url 'pay:direct_payment' item.id%}">
+                                <button class="btn btn-success">BUY NOW</button>
+                              </form>
+                        </div>
+                        <div class="col-sm-6">
+                              <form action="{% url 'pay:cart' item.id%}">
+                                    <button class="btn btn-info">ADD TO CART</button>
+                              </form>
+                        </div>
+                    </div>
+
+  </div>
+
+</div>
+</div>
+    {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+{% endfor %}
+{% else %}
+      <p>No product available.</p>
+      {% endif %} 
+<div class="pagination">
+
+    <span class="step-links">
+
+        {% if contacts.has_previous %}
+
+            <a href="?page={{ contacts.previous_page_number }}" class="edit">previous</a>
+
+        {% endif %}
+
+        <span class="current">
+
+            Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+
+        </span>
+
+        {% if contacts.has_next %}
+
+            <a href="?page={{ contacts.next_page_number }}" class="edit">next</a>
+
+        {% endif %}
+
+    </span>
+
+</div>
+{%endblock%}      

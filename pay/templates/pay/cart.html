@@ -1,0 +1,47 @@
+{% extends 'pay/profile.html' %}
+
+{% block body %}
+
+{% if ob.cart_set.all %}
+      <h1 align="center">PRODUCTS IN YOUR CART</h1>
+{% for item in ob.cart_set.all %}
+    {% if forloop.first %}<div class="row">{% endif %}
+    <div class="col-sm-4">
+<div class="card">
+
+  <!-- Card image -->
+  <img src="{{item.cart_pimage.url}}" class="card-img-top" alt="Card image cap" height="400">
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h4 class="card-title"><a>{{item.cart_pname}}</a></h4>
+    <!-- Text -->
+    <p class="card-text">{{item.cart_pdescription}}<br><h3>Rs. {{item.cart_pprice}}</h3></p>
+    <!-- Button -->
+    <div class="row">
+                        <div class="col-sm-6">
+                              <form action="{% url 'pay:payment' item.id%}" method="post">
+                                      <button class="btn btn-success">BUY NOW</button>
+                                    </form>
+                        </div>
+                        <div class="col-sm-6">
+                             <form action="{% url 'pay:delete_cart' item.id%}" method="post">
+                                          {% csrf_token %}
+                                          <button class="btn btn-danger">REMOVE FROM CART</button>
+                                    </form>
+                        </div>
+                    </div>
+
+  </div>
+
+</div>
+</div>
+    {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+{% endfor %}
+      {% else %}
+            <br><h1 align="center" style="font-weight: bolder;">No items added in the cart</h1>
+      {% endif %} 
+
+{% endblock %}

@@ -1,0 +1,4 @@
+#!/home/subhash/payment/venv/bin/python
+
+from f90nml import cli
+cli.parse()

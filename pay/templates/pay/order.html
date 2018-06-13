@@ -1,0 +1,47 @@
+{% extends 'pay/profile.html' %}
+
+{% block body %}
+{% if ob.order_set.all %}
+      <h1 align="center">PRODUCTS FOR YOUR ORDER</h1>
+{% for item in ob.order_set.all %}
+    {% if forloop.first %}<div class="row">{% endif %}
+    <div class="col-sm-4">
+<div class="card">
+
+  <!-- Card image -->
+  <img src="{{item.order_image.url}}" class="card-img-top" alt="Card image cap" height="400">
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h4 class="card-title"><a>{{item.order_product}}</a></h4>
+    <!-- Text -->
+    <p class="card-text">{{item.cart_pdescription}}<br><h3>Rs. {{item.order_price}}</h3></p>
+    <p class="card-text">Payment Status  : {{item.order_payment_status}}</p>
+    <p class="card-text">Transaction Id  :   {{item.order_txn_id}}</p>
+    <!-- Button -->
+    <div class="row">
+                        <div class="col-sm-6">
+                             <form action="{% url 'pay:make_payment' item.id%}">
+                          <button class="btn btn-success">MAKE PAYMENT</button>
+                        </form>
+                        </div>
+                        <div class="col-sm-6">
+                             <form action="{% url 'pay:delete_order' item.id%}" method="post">
+                              {% csrf_token %}
+                          <button class="btn btn-danger">Cancel Order</button>
+                        </form>
+                        </div>
+                    </div>
+
+  </div>
+
+</div>
+</div>
+    {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+{% endfor %}
+      {% else %}
+            <br><h1 align="center" style="font-weight: bolder;">No items in the order list</h1>
+      {% endif %}
+{% endblock %}

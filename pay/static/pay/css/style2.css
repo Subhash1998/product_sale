@@ -1,0 +1,20 @@
+.profile
+{
+  margin-left:50px;
+  border-radius: 100%;
+}
+
+.highlight:hover
+{
+  background-color: #f2f2f2;
+}
+
+hr
+{
+  width: 100px;
+}
+
+.pad
+{
+  padding-right:50px;
+}

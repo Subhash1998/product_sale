@@ -1,0 +1,46 @@
+{% extends 'pay/profile.html' %}
+
+{%block body%}
+
+<h1>PRODUCTS</h1>
+{% if data %}
+{% for d in data%}
+    {% if forloop.first %}<div class="row">{% endif %}
+    <div class="col-sm-4">
+<div class="card">
+
+  <!-- Card image -->
+  <img src="{{d.p_image.url}}" class="card-img-top" alt="Card image cap" height="400">
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h4 class="card-title"><a>{{d.p_name}}</a></h4>
+    <!-- Text -->
+    <p class="card-text">{{d.p_description}}<br><h3>Rs. {{d.p_price}}</h3></p>
+    <!-- Button -->
+    <div class="row">
+                        <div class="col-sm-6">
+                              <form action="{% url 'pay:direct_payment' d.id%}">
+                                <button class="btn btn-success">BUY NOW</button>
+                              </form>
+                        </div>
+                        <div class="col-sm-6">
+                              <form action="{% url 'pay:cart' d.id%}">
+                                    <button class="btn btn-info">ADD TO CART</button>
+                              </form>
+                        </div>
+                    </div>
+
+  </div>
+
+</div>
+</div>
+    {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+{% endfor %}
+{% else %}
+      <p>No such product available.</p>
+      {% endif %}
+
+{%endblock%}

@@ -1,0 +1,152 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{%load staticfiles %}
+  <title>Invoice</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'pay/scss/style.scss' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  	.box-title{
+  font-weight:bold;
+}
+.heading-row td{
+  font-weight:bold;
+  text-align:center;
+  border-bottom:solid 1px red;
+}
+.total-row td{
+  font-weight:bold;
+}
+.v-row td{
+  border:none;
+}
+@media print{
+  button .print-btn{
+    display:none;
+  }
+}
+tr{
+	text-align: center;
+	height:60px;
+}
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <div id="bill-display">
+    <table class="table table-bordered" border="1px">
+      <caption class="text-center">RETAIL INVOICE <small class="pull-right">(original)</small></caption>
+      <tr>
+        <td colspan="3" rowspan="3">
+          <div class="box-title">
+            ROKADNATH TRADERS
+          </div>
+          <div class="box-content">
+          GF-2. Shiv Prasad Complex,<br>
+          Mangal Bazar,<br>
+          Vadodara-390006.<br>
+          Ph: 0265-2561202<br>
+          M: 9601683578 / 9879962148
+          </div>
+        </td>
+        <td colspan="2">
+          <div class="box-title">Transaction Id</div>
+          <div class="box-content">{{ob2.order_txn_id}}</div>
+        </td>
+        <td colspan="2">
+          <div class="box-title">Dated</div>
+          <div class="box-content">{{ob2.order_date}}</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="box-title">Delivery Note</div>
+          <div class="box-content"></div>
+        </td>
+        <td colspan="2">
+          <div class="box-title">Mode of Payment</div>
+          <div class="box-content"></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="box-title">Dispatch Document</div>
+          <div class="box-content"></div>
+        </td>
+        <td colspan="2">
+          <div class="box-title">Dated</div>
+          <div class="box-content">{{ob2.order_date}}</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" rowspan="3">
+          <div class="box-title">Buyer</div>
+          <div class="box-content">
+            <b>{{user.first_name}}</b><br>
+            {{user.userprofile.address}}<br>
+            {{user.userprofile.mobile}}
+          </div>
+        </td>
+        <td colspan="4">
+          <div class="box-title">Terms of Delivery</div>
+          <div class="box-content"></div>
+        </td>
+      </tr>
+      <tr></tr><tr></tr>
+      <tr class="heading-row v-row">
+        <td>Sr<br>No.</td>
+        <td>Description of goods</td>
+        <td>HSN Code</td>
+        <td>Quantity</td>
+        <td>Rate</td>
+        <td>Amount</td>
+      </tr>
+      <tr class="v-row">
+        <td>1</td>
+        <td>{{ob2.order_product}}</td>
+        <td></td>
+        <td class="text-right">{{ob2.count}}</td>
+        <td class="text-right">{{ob2.order_price}}</td>
+        <td class="text-right">{{ob2.order_price}}</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <div class="box-content">Amount Chargeable(in words)</div>
+          <div class="box-title">Rs. {{ob2.order_price}}</div>
+        </td>
+        <td colspan="4"></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Company's VAT TIN: <span id="comp-vat-tin"></span><br>
+          Company's CST No: <span id="comp-cst-no"></span><br>
+          BANK DETAILS: A/C NO: <br>
+          IFSCODE: <br>
+          Declaration:<br>
+          We declare that this invoice shows the actual price of the goods described and that all particulars are true and correct.
+        </td>
+        <td colspan="4">
+          <div class="box-title text-right">
+            for ROKADNATH TRADERS
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="7" class="text-center">
+          SUBJECT TO VADODARA JURIDICTION<br>
+          This is a Computer Generated Invoice.
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>
