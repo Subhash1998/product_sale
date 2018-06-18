@@ -33,16 +33,16 @@ def signup(request):
     if request.method=='POST':         
         form=UserForm(data=request.POST)
         if form.is_valid():
-            recaptcha_response = request.POST.get('g-recaptcha-response')
-            url = 'https://www.google.com/recaptcha/api/siteverify'
-            values = {
-                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
-                'response': recaptcha_response
-            }
-            data = urllib.urlencode(values)
-            req = urllib2.Request(url, data)
-            response = urllib2.urlopen(req)
-            result = json.load(response)
+#             recaptcha_response = request.POST.get('g-recaptcha-response')
+#             url = 'https://www.google.com/recaptcha/api/siteverify'
+#             values = {
+#                 'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+#                 'response': recaptcha_response
+#             }
+#             data = urllib.urlencode(values)
+#             req = urllib2.Request(url, data)
+#             response = urllib2.urlopen(req)
+#             result = json.load(response)
             ''' End reCAPTCHA validation '''
 
             if result['success']:
