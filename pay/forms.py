@@ -9,7 +9,7 @@ class UserForm(forms.ModelForm):
   first_name=forms.CharField(widget=forms.TextInput(attrs={'placeholder':'First Name'}))
   class Meta:
   	model=User
-  	fields=('first_name','email','username')
+  	fields=('first_name','email','username','password')
 
 
 class EditAddress(forms.ModelForm):
