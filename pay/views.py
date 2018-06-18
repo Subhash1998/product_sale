@@ -48,7 +48,6 @@ def signup(request):
             first_name=form.cleaned_data['first_name']
             email=form.cleaned_data['email']
             username=form.cleaned_data['username']
-            password=form.cleaned_data['password']
             user=form.save()
             user.set_password(user.password)
             user.save()
