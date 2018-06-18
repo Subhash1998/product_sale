@@ -51,35 +51,35 @@ def signup(request):
             user=form.save()
             user.set_password(user.password)
             user.save()
-            authkey = "210112APJgCTharC5ad321b5" # Your authentication key.
+#             authkey = "210112APJgCTharC5ad321b5" # Your authentication key.
 
-            mobiles = "919340114842" # Multiple mobiles numbers separated by comma.
+#             mobiles = "919340114842" # Multiple mobiles numbers separated by comma.
 
-            message = "Test message" # Your message to send.
+#             message = "Test message" # Your message to send.
 
-            sender = "112233" # Sender ID,While using route4 sender id should be 6 characters long.
+#             sender = "112233" # Sender ID,While using route4 sender id should be 6 characters long.
 
-            route = "default" # Define route
+#             route = "default" # Define route
 
-            # Prepare you post parameters
-            values = {
-                      'authkey' : authkey,
-                      'mobiles' : mobiles,
-                      'message' : message,
-                      'sender' : sender,
-                      'route' : route
-                      }
+#             # Prepare you post parameters
+#             values = {
+#                       'authkey' : authkey,
+#                       'mobiles' : mobiles,
+#                       'message' : message,
+#                       'sender' : sender,
+#                       'route' : route
+#                       }
 
 
-            url = "http://api.msg91.com/api/sendhttp.php" # API URL
+#             url = "http://api.msg91.com/api/sendhttp.php" # API URL
 
-            postdata = urllib.urlencode(values) # URL encoding the data here.
+#             postdata = urllib.urlencode(values) # URL encoding the data here.
 
-            req = urllib2.Request(url, postdata)
+#             req = urllib2.Request(url, postdata)
 
-            response = urllib2.urlopen(req)
+#             response = urllib2.urlopen(req)
 
-            output = response.read() # Get Response
+#             output = response.read() # Get Response
 
 
 
