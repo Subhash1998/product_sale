@@ -41,8 +41,8 @@ PAYMENT_URL_TEST = 'https://test.payu.in/_payment'
 PAYMENT_URL_LIVE = 'https://secure.payu.in/_payment'
 SERVICE_PROVIDER = "payu_paisa"
 
-SALT = 'srGdfkAhHq'
-KEY = 'OpMr6JOT'
+SALT = ''
+KEY = ''
 
 GOOGLE_RECAPTCHA_SECRET_KEY ='6Ldmr0wUAAAAAH0r9Dnh8cZhV6-OMpspi1cGjJRZ'
 
