@@ -1,6 +1,3 @@
-Website Link:-
-https://buyhere.herokuapp.com
-
 This is an e-commerce website for selling products created using Python(Django).
 It uses a payment gateway payumoney for which the link is https://payumoney.com
 
