@@ -44,7 +44,7 @@ python-dateutil==2.6.1
 python-google-places==1.4.1
 python-http-client==3.0.0
 python-twitter==3.4.1
-PyYAML==3.12
+PyYAML==5.4
 query-string==0.0.28
 RapidConnect==0.0.6
 request==0.0.26
