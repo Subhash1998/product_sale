@@ -58,7 +58,7 @@ South==1.0.2
 SQLAlchemy==1.2.5
 stem==1.6.0
 torrequest==0.1.0
-urllib3==1.22
+urllib3==1.26.5
 virtualenv==15.1.0
 websocket-client==0.47.0
 Babel==2.5.3
